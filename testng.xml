@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<!-- Définition de la suite de tests avec une exécution parallèle et un ordre de passage des tests -->
+<suite name="TEST UI JUMIA - CI" verbose="3" preserve-order="true">
+    <!-- Listeners : ajout d’écouteurs pour la journalisation, le reporting et la capture d'écran -->
+    <listeners>
+        <listener class-name="utils.CustomReportListener" />
+    </listeners>
+    <test name="AuthenficationAndCollabAndInfosTest" preserve-order="true">
+        <classes>
+            <!-- Test de l'accès et la recherche d'une produit depuis la barre de recherche -->
+            <class name="searchproductcontainer.SearchProductContainerTest" />
+        </classes>
+    </test>
+
+</suite>
