@@ -29,7 +29,7 @@ public class HomePageContainerMethods extends HomePageSelectors {
                 "Vendez sur Jumia",
                 "Title is not found");
         Assert.assertEquals(this.useFullMethods.getText(buttonElement("Rechercher")),
-                "Rechercher", "Title of table is not found");
+                "RECHERCHER", "Title of table is not found");
     }
 
     public void searchRandomProduct() {
