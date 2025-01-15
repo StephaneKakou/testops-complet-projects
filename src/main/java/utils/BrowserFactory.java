@@ -12,20 +12,17 @@ import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 
-import com.aventstack.extentreports.ExtentReports;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BrowserFactory {
 	public WebDriver driver;
 	public ReadConfigProperties props;
-	public ExtentReports extent;
-	protected final int TIMER_TO_WAIT = 10000;
+	protected final int TIMER_TO_WAIT = 1000;
 	// protected final String ENV = System.getenv("ENV");
 
 	public BrowserFactory(String browserName) {
 		this.props = new ReadConfigProperties();
-		this.extent = ExtentSparkReportConfig.extentSparkConfiguration();
 
 		if (this.props.getEnv().equals("local")) {
 			switch (browserName) {

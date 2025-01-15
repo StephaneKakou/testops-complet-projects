@@ -19,7 +19,7 @@ public class SearchProductContainerTest {
     @Test
     public void searchProductTest(){
         try {
-            homePageActions.searchRandomProduct();
+            homePageActions.searchAnyProduct();
         } catch (Exception e) {
             Assert.fail("Erreur : lors de la recherche du produit");
         }

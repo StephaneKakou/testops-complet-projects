@@ -9,7 +9,6 @@ import java.util.Arrays;
 import java.util.List;
 
 public class HomePageContainerMethods extends HomePageSelectors {
-    public WebDriver driver;
     protected UseFullMethods useFullMethods;
     private final List<String> nameOfProducts = new ArrayList<>(Arrays.asList("Scanner De Codes-Barres Laser 1D",
             "Music Pioneer Kit Combiné 2-en-1 T900Ultra2&AirPro2S Smartwatch+Casque Blue",
@@ -20,10 +19,12 @@ public class HomePageContainerMethods extends HomePageSelectors {
 
     public HomePageContainerMethods(String browserName) {
         super(browserName);
-        this.useFullMethods = new UseFullMethods(driver);
+        this.browserName = browserName;
+        this.useFullMethods = new UseFullMethods(this.driver);
     }
 
     public void checkTitlePage() {
+        this.useFullMethods.click(closePopup);
         Assert.assertEquals(this.useFullMethods.getText(aElement("Vendez sur Jumia")),
                 "Vendez sur Jumia",
                 "Title is not found");

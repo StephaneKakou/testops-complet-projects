@@ -6,17 +6,18 @@ import org.openqa.selenium.support.PageFactory;
 import utils.BrowserFactory;
 
 public class HomePageSelectors  extends BrowserFactory {
-
+    public String browserName;
     public HomePageSelectors(String browserName) {
         super(browserName);
-        PageFactory.initElements(driver, this);
+        this.browserName = browserName;
+        PageFactory.initElements(this.driver, this);
     }
     protected By h1Element(String value) {
         return By.xpath("//h1[normalize-space()='" + value + "']");
     }
 
     protected By titleOfModalBroker = By.xpath("//h1[normalize-space()='Bravo ! Vous avez rejoint BIG BROKER !']");
-    protected By codeManagementLinkBroker = By.xpath("//a[normalize-space()='Gestion de mes codes']");
+    protected By closePopup = By.xpath("//button[@class='cls']");
 
     protected By h2Element(String value) {
         return By.xpath("//h2[normalize-space()='" + value + "']");
